@@ -1,0 +1,2 @@
+default:
+	rpmbuild -bs *.spec
