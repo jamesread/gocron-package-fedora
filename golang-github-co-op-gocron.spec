@@ -18,9 +18,8 @@ Version:                1.18.0
 # REMOVE BEFORE SUBMITTING THIS FOR REVIEW
 %gometa -f
 
-%global common_description %{expand:
-Easy and fluent Go cron scheduling. This is a fork from
-https://github.com/jasonlvhit/gocron.}
+%global common_description %{expand: 
+Easy and fluent Go cron scheduling. }
 
 %global golicenses      LICENSE
 %global godocs          CODE_OF_CONDUCT.md CONTRIBUTING.md README.md\\\
@@ -28,11 +27,13 @@ https://github.com/jasonlvhit/gocron.}
 
 Name:           %{goname}
 Release:        %autorelease
-Summary:        Easy and fluent Go cron scheduling. This is a fork from https://github.com/jasonlvhit/gocron
+Summary:        Easy and fluent Go cron scheduling
 
 License:        MIT
 URL:            %{gourl}
 Source:         %{gosource}
+
+Requires: golang
 
 %description %{common_description}
 
@@ -43,6 +44,8 @@ Source:         %{gosource}
 
 %generate_buildrequires
 %go_generate_buildrequires
+
+%build
 
 %install
 %gopkginstall
